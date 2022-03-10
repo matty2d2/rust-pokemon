@@ -3,8 +3,6 @@ macro_rules! endpoint {
         use cached::proc_macro::cached;
         use reqwest::Url;
 
-        use crate::model::resource::NamedApiResourceList;
-
         const ENDPOINT: &str = concat!("https:///pokeapi.co/api/v2/", $name, "/");
 
         #[cached(result = true, time = 259200)]

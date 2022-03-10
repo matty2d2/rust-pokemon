@@ -53,26 +53,6 @@ pub struct Encounter {
     pub method: Option<NamedApiResource>,
 }
 
-/// [FlavorText official documentation](https://pokeapi.co/docs/v2#flavortext)
-#[derive(Default, Debug, Clone, PartialEq, serde::Deserialize)]
-pub struct FlavorText {
-    /// The localized flavor text for an API resource in a specific language.
-    pub flavor_text: Option<String>,
-    /// The language this name is in.
-    pub language: Option<NamedApiResource>,
-    /// The game version this flavor text is extracted from.
-    pub version: Option<NamedApiResource>,
-}
-
-/// [GenerationGameIndex official documentation](https://pokeapi.co/docs/v2#generationgameindex)
-#[derive(Default, Debug, Clone, PartialEq, serde::Deserialize)]
-pub struct GenerationGameIndex {
-    /// The internal id of an API resource within game data.
-    pub game_index: Option<i64>,
-    /// The generation relevent to this game index.
-    pub generation: Option<NamedApiResource>,
-}
-
 /// [MachineVersionDetail official documentation](https://pokeapi.co/docs/v2#machineversiondetail)
 #[derive(Default, Debug, Clone, PartialEq, serde::Deserialize)]
 pub struct MachineVersionDetail {
@@ -96,8 +76,8 @@ pub struct Name {
 pub struct NamedApiResource {
     /// The name of the referenced resource.
     pub name: Option<String>,
-    /// The URL of the referenced resource.
-    pub url: Option<String>,
+    // /// The URL of the referenced resource.
+    // pub url: Option<String>,
 }
 
 /// [VerboseEffect official documentation](https://pokeapi.co/docs/v2#verboseeffect)
@@ -120,24 +100,4 @@ pub struct VersionEncounterDetail {
     pub max_chance: Option<i64>,
     /// A list of encounters and their specifics.
     pub encounter_details: Option<Vec<Encounter>>,
-}
-
-/// [VersionGameIndex official documentation](https://pokeapi.co/docs/v2#versiongameindex)
-#[derive(Default, Debug, Clone, PartialEq, serde::Deserialize)]
-pub struct VersionGameIndex {
-    /// The internal id of an API resource within game data.
-    pub game_index: Option<i64>,
-    /// The version relevent to this game index.
-    pub version: Option<NamedApiResource>,
-}
-
-/// [VersionGroupFlavorText official documentation](https://pokeapi.co/docs/v2#versiongroupflavortext)
-#[derive(Default, Debug, Clone, PartialEq, serde::Deserialize)]
-pub struct VersionGroupFlavorText {
-    /// The localized name for an API resource in a specific language.
-    pub text: Option<String>,
-    /// The language this name is in.
-    pub language: Option<NamedApiResource>,
-    /// The version group which uses this flavor text.
-    pub version_group: Option<NamedApiResource>,
 }
